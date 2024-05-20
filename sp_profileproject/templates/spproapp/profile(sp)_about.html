@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            background-image: url("https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        #profile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        #bio {
+            max-width: 600px;
+            margin-right:60%;
+        }
+
+        #skills {
+            margin-top: 20px;
+        }
+
+        #skills ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #skills li {
+            margin: 5px;
+            background-color: #333;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        #background,
+        #interests,
+        #achievements,
+        #goals,
+        #why-field,
+        #contact {
+            margin-top: 20px;
+        }
+
+        #contact a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+        * {
+            font-size: 20px solid white;
+        }
+
+        #tab1 {
+            background-color: black;
+            color: white;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            border-radius: 30px;
+        }
+
+        #head1 {
+            background-color: orange;
+            border-radius: 30px;
+            border: 4px solid black;
+        }
+
+        th {
+            height: 50px;
+            width: 250px;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        a {
+            text-decoration: none; /* Removes underline */
+            color: inherit; /* Inherits the color from the parent */
+        }
+
+        .spbio {
+            color: black;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        #spabout {
+            background-color: white;
+            border-radius: 2%;
+            padding-left: 5%;
+        }
+
+        .animated-box {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+
+        #divi1 {
+            background: red;
+            animation: mymove1 5s infinite;
+        }
+
+        #divi2 {
+            background: red;
+            animation: mymove2 5s infinite;
+        }
+
+        @keyframes mymove1 {
+            0% { transform: translate(-700%, 0%) rotate(0deg); background: violet; }
+            50% { transform: translate(0%, 0%) rotate(3600deg); background: indigo; }
+            100% { transform: translate(-700%, 0%) rotate(7200deg); background: rgb(221, 75, 107); }
+        }
+
+        @keyframes mymove2 {
+            0% { transform: translate(700%, 0%) rotate(0deg); background: red; }
+            50% { transform: translate(0%, 0%) rotate(3600deg); background: white; }
+            100% { transform: translate(700%, 0%) rotate(7200deg); background: rgb(16, 224, 89); }
+        }
+
+        #abt {
+            padding-top: 10px;
+            margin-top: -90px;
+            margin-bottom: -10px;
+        }
+
+        header {
+            padding-bottom: 10px;
+            margin-bottom: -50px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tab1">
+        <tr>
+            <th><a href="{% url 'spprofile' %}">Home</a></th>
+            <th id="head1"><a href="{% url 'spprofile_about' %}">About</a></th>
+            <th><a href="{% url 'spprofile_resume' %}">Resume</a></th>
+            <th><a href="{% url 'spprofile_projects' %}">Projects</a></th>
+            <th><a href="{% url 'spprofile_contact' %}">Contact</a></th>
+        </tr>
+    </table>
+    <header>
+        <center>
+        <table style="">
+        <tr>
+        <td><div id="divi1" class="animated-box"></div></td>
+        <td><h1>ABOUT ME!</h1></td>
+        <td><div id="divi2" class="animated-box"></div></td>
+    </tr>
+    </table>
+</center>
+    </header>
+    <br>
+    <br>
+
+    <main>
+        <section id="profile">
+            <img src="{% static 'images/prospimg.png' %}" alt="Profile Picture">
+            <div id="bio">
+                <h2>Muni Yaswanth Duvvuru</h2>
+                <p class="spbio">Hello! I'm a passionate and dedicated student with a keen interest in Programming and Full Stack Web Development.</p>
+            </div>
+        </section>
+        <table id="spabout">
+        <tr>
+            <td>
+        <section id="background">
+            <h2>Background</h2>
+            <p class="spbio">I am currently pursuing Bachelor of Technology at Sree Vidyanikethan Engineering College. My educational journey has provided me with a solid foundation in Programming and Web Development, and I am always eager to expand my knowledge in Emerging Technologies.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul id="skillsList"></ul>
+        </section>
+
+        <section id="interests">
+            <h2>Interests</h2>
+            <p class="spbio">I have a deep interest in Transforming Aspects such as Social Issues, Politics as a part. I find joy in Their Strategies and Making Deep Involvement with People.</p>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <p class="spbio">I take pride in "myrt's, A Shopping Amigo website", "Keep Safe, A database Storage Application" etc., that showcase my dedication and capabilities.</p>
+        </section>
+
+        <section id="goals">
+            <h2>Goals</h2>
+            <p class="spbio">Looking forward, my goal is to Emerge as Developer. I am particularly interested in Programming and Full Stack Web Development.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Connect with Me</h2>
+            <p class="spbio">Feel free to connect with me on <a href="https://www.linkedin.com/in/muni-yaswanth-duvvuru-520045297?trk=contact-info" target="_blank">LinkedIn</a> or through any means from the contact page to discuss.</p>
+        </section>
+
+        <section id="closing">
+            <h2>Closing</h2>
+            <p class="spbio">Thank you for visiting my profile! I look forward to connecting with you and exploring new opportunities. Let's create something amazing together.</p>
+        </section>
+        </td>
+        </tr>
+        </table>
+    </main>
+
+    <script>
+        // Dynamic content using JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const skills = ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Python', 'Java', 'Django', 'SQL','PHP','MongoDB','BASH'];
+
+            // Display skills in the unordered list
+            const skillsList = document.getElementById('skillsList');
+            skills.forEach(skill => {
+                const li = document.createElement('li');
+                li.textContent = skill;
+                skillsList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #head1 {
+            background-color: orange;
+            border-radius: 30px;
+            border: 4px solid black;
+        }
+        #tab1 {
+            background-color: black;
+            color: white;
+            width: 80%;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        th {
+            height: 50px;
+            width: 20%;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        #resume-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        #left-column,
+        #right-column {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #left-column {
+            background-color: #3498db;
+            color: white;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        #right-column {
+            padding: 20px;
+            flex-basis: 60%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none; /* Removes underline */
+            color: inherit; /* Inherits the color from the parent */
+        }
+        #image{
+            height:200px;
+            width:200px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <table id="tab1">
+        <tr>
+            <th><a href="{% url 'spprofile' %}">Home</a></th>
+            <th><a href="{% url 'spprofile_about' %}">About</a></th>
+            <th id="head1"><a href="{% url 'spprofile_resume' %}">Resume</a></th>
+            <th><a href="{% url 'spprofile_projects' %}">Projects</a></th>
+            <th><a href="{% url 'spprofile_contact' %}">Contact</a></th>
+        </tr>
+    </table>
+    <div id="resume-container">
+        <div id="left-column">
+            <img src="{% static 'images/prospimg.png' %}" id="image">
+            <h2>Duvvuru Muni Yaswanth</h2>
+            <br>
+            <h2>Student</h2>
+            <br>
+            <h2>Date of birth</h2>
+            <p>April 20,2004</p>
+            <h2>Address</h2>
+            <p>Arlapadu,Pellakur(M),Tirupati(dist),AP-524129</p>
+        </div>
+        <div id="right-column">
+            <h2>Contact Information</h2>
+            <p>Email: muniyaswanthduvvuru@gmail.com</p>
+            <p>Phone: +91 9014674986</p>
+
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>Django</li>
+            </ul>
+
+            <h2>Experience</h2>
+            <p><strong>Student</strong> </p><p> 2022 - 2023 Mini project on Data Base Manament
+                through UI TECHNOLOGIES AND DJANGO.</p>
+               <p> 2022 - 2023 Mini Project on Shopping amigo website.</p>
+               <p> 2023 - 2024 Mini Project on Election Ananlysis Website.</p>
+
+            <h2>Education</h2>
+            <p><strong>Bachelor of Science in Computer Science(cyber Security)</strong> - Sree Vidyanikethan Eng. college, Graduated by 2025</p>
+        </div>
+    </div>
+</body>
+</html>

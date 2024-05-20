@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: auto;
+            background: linear-gradient(to bottom, #3498db, #1abc9c);
+            animation: gradientAnimation 10s infinite alternate;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(to bottom, #e392a0, #bdaa2f);
+            }
+            50% {
+                background: linear-gradient(to bottom, #63bfaf, #5a53da);
+            }
+            100% {
+                background: linear-gradient(to bottom, #c1d5c1, #a28ef1);
+            }
+        }
+        #tab1 {
+            background-color: black;
+            color: white;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 2%;
+            border-radius: 30px;
+            margin-bottom:3%;
+        }
+
+        th {
+            height: 50px;
+            width: 250px;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        #head1 {
+            background-color: orange;
+            border-radius: 30px;
+            border: 4px solid black;
+        }
+        table {
+            margin: 0%;
+        }
+        td {
+            padding: 0%;
+        }
+        img {
+            height: 500px;
+            width: 700px;
+            margin-right: 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+        img:hover{
+            transform: scale(1.05);
+            transition-delay:10ms;
+        }
+        a {
+            text-decoration: none; 
+            color: inherit;
+        }
+        
+    </style>
+</head>
+<body>
+    <table id="tab1">
+        <tr>
+            <th ><a href="{% url 'spprofile' %}">Home</a></th>
+            <th><a href="{% url 'spprofile_about' %}">About</a></th>
+            <th><a href="{% url 'spprofile_resume' %}">Resume</a></th>
+            <th id="head1"><a href="{% url 'spprofile_projects' %}">Projects</a></th>
+            <th><a href="{% url 'spprofile_contact' %}">Contact</a></th>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><img src="{% static "images/consp.png" %}"></td>
+            <td style="padding-bottom:20%"><h1>Contract Company website:</h1>
+            <h2>This project is designed with the user Interface and Various contracts done by certain company </h2></td>
+        </tr>
+        <tr>
+            <td style="padding-bottom:5%"><h1>Myrt's Amigo website:</h1>
+            <h2>The Shop and Enterprises Application aims to simplify and automate various aspects of business management, including inventory management, sales tracking, customer relationship management, and employee scheduling. By integrating these functionalities into a single user-friendly platform, businesses can improve efficiency, reduce costs, and enhance overall productivity.</h2></td>
+            <td><img src="{% static "images/myrtssp.png" %}"></td>   
+        </tr>
+        <tr>
+            <td><img src="{% static "images/tictacsp.png" %}"></td>
+        <td style="padding-bottom:5%"><h1>TIC-TOC-TOE Gaming website:</h1>
+                <h2>Tic-Tac-Toe, or OXO, is a classic paper-and-pencil game typically played on a 3x3 grid. The game involves two players, usually represented as X and O, who take turns marking spaces in the grid. The objective is to form a horizontal, vertical, or diagonal line of three of their symbols in a row before the opponent does.
+
+                    Here's a brief description of how the game is played:
+                    
+                    The game is played on a 3x3 grid.
+                    Two players take turns, one using "X" and the other using "O."
+                    Players place their symbol in an empty space on the grid during their turn.
+                    The game continues until one player successfully aligns three of their symbols in a row horizontally, vertically, or diagonally, or until the grid is filled, resulting in a draw.</h2></td>
+        </tr>
+    </table>
+</body>
+</html>
